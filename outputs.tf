@@ -1,7 +1,8 @@
-output "dns_name" {
-  description = "The DNS name of the load balancer."
-  value       = "${aws_lb.application.dns_name}"
-}
+# output "dns_name" {
+#   description = "The DNS name of the load balancer."
+
+#   # value       = "${aws_lb.application.dns_name}"
+# }
 
 output "http_tcp_listener_arns" {
   description = "The ARN of the TCP and HTTP load balancer listeners created."
@@ -23,20 +24,21 @@ output "https_listener_ids" {
   value       = "${slice(concat(aws_lb_listener.frontend_https.*.id, list("")), 0, var.https_listeners_count)}"
 }
 
-output "load_balancer_arn_suffix" {
-  description = "ARN suffix of our load balancer - can be used with CloudWatch."
-  value       = "${aws_lb.application.arn_suffix}"
-}
+# output "load_balancer_arn_suffix" {
+#   description = "ARN suffix of our load balancer - can be used with CloudWatch."
+#   # value       = "${aws_lb.application.arn_suffix}"
+# }
 
-output "load_balancer_id" {
-  description = "The ID and ARN of the load balancer we created."
-  value       = "${aws_lb.application.id}"
-}
+# output "load_balancer_id" {
+#   description = "The ID and ARN of the load balancer we created."
+#   # value       = "${aws_lb.application.id}"
+# }
 
-output "load_balancer_zone_id" {
-  description = "The zone_id of the load balancer to assist with creating DNS records."
-  value       = "${aws_lb.application.zone_id}"
-}
+# output "load_balancer_zone_id" {
+#   description = "The zone_id of the load balancer to assist with creating DNS records."
+#   # value       = "${aws_lb.application.zone_id}"
+
+# }
 
 output "target_group_arns" {
   description = "ARNs of the target groups. Useful for passing to your Auto Scaling group."
